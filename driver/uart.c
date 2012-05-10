@@ -11,7 +11,7 @@
      *       Compiler:  linux 内核 
      * 
      *         Author:  sunsea1026 
-     *          Email:  sunsea1026@gmail.com 
+     *          Email:  changshaoran@163.com 
      * 
      * ===================================================================================== 
      */  
@@ -34,7 +34,8 @@
       
     MODULE_AUTHOR("sunsea");  
     MODULE_DESCRIPTION("s3c2440 serial driver");  
-    MODULE_LICENSE("GPL");  
+    MODULE_LICENSE("GPL"); 
+
     int sunsea_open(struct inode *inode, struct file *filp)  
     {  
         /* 8N1 */  
@@ -54,8 +55,7 @@
         while(wbuf[i] != '/0')  
         {  
             state = readl(UART_UTRSTAT1);  
-            if((0x02 & state) == 2)  
-            {  
+            if ((0x02 & state) == 2){  
                 writeb(wbuf[i], UART_UTXH1);  
                 i++;  
             }  
