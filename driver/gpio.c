@@ -20,7 +20,10 @@
 #include <mach/gpio.h>
 #include <mach/gpio-nrs.h>
 
+
 static struct input_dev *button_dev;
+
+/*中断服务处理程序*/
 static irqreturn_t buttons_interrupt(int irq, void *dummy);
 static int button_open(struct input_dev *dev);
 static void button_close(struct input_dev *dev);
@@ -66,7 +69,7 @@ static int button_open(struct input_dev *dev)
 	set_irq_type(IRQ_EINT19, IRQ_TYPE_EDGE_BOTH);
 
 	for (i = 0; i < sizeof(button_irqs)/sizeof(button_irqs[0]); i++) {
-		if (button_irqs[i].irq < 0)
+		if (:button_irqs[i].irq < 0)
 			continue;
 		err = request_irq(button_irqs[i].irq, buttons_interrupt,
 		IRQF_SAMPLE_RANDOM, button_irqs[i].name, (void)&button_irqs[i]);
