@@ -1,4 +1,4 @@
-target = second
+target := 
 app = $(patsubst %, %_test, $(target))
 appsrc = $(patsubst %, %_test.c, $(target))
 

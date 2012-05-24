@@ -28,4 +28,4 @@ test:
 
 clean:
 	@echo "\033[34;47m Clean all the temp file !\033[0m"
-	-rm -rf *.o *.ko *.mod.c *.symvers *.order  .$(target)* .tmp_versions 
+	-rm -rf *.o *.ko *.mod.c *.symvers *.order  .$(target)* .tmp_versions .*. 

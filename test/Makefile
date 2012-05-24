@@ -1,12 +1,8 @@
-OBJS := app.o print.o
-SRCS := $(OBJS:.=.c)
+target := $1
 
-Tar: .depend $(OBJS)
-	gcc -o $@ $(OBJS)
-
+all: 
+	cc -o $(target) $(patsubst %, %.c, $(target))
 clean:
-	rm -f $(OBJS)
+	rm a.out $(target)
 
-include rules.mk
-sinclude .depend
-
+.PHONY: clean
