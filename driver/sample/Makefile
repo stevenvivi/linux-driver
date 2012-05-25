@@ -23,9 +23,9 @@ test:
 	@echo "\033[34;47m Now Let's Compile the App !\033[0m"
 	$(CC) -o $(app) $(appsrc)
 
-.PHONY : clean test
-
-
 clean:
 	@echo "\033[34;47m Clean all the temp file !\033[0m"
 	-rm -rf *.o *.ko *.mod.c *.symvers *.order  .$(target)* .tmp_versions 
+
+.PHONY : clean test
+
